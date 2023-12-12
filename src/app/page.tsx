@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const [isTouched, setIsTouched] = useState(false);
@@ -25,13 +26,12 @@ export default function Home() {
       <button
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        onClick={() => {
-          location.href = '/audio_test';
-        }}
         className={`mt-8 px-6 py-3 text-xl md:px-10 md:py-4 md:text-3xl bg-gradient-to-r from-green-400 to-blue-500 rounded-full text-white shadow-lg ${isTouched ? 'scale-110' : 'hover:scale-110'
           } transform transition duration-300`}
       >
-        {"Let's Start"}
+        <Link href="/audio_test">
+          {"Let's Start"}
+        </Link>
       </button>
     </main>
   );
